@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parallax</title>
+
+    <style>
+        body{
+            margin:0;
+            height:100%;
+        }
+        .img1, .img2, .img3{
+                background-position: center ;
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                opacity:0.6;
+                position:relative;
+        }
+        .img1{
+            background-image: url("img1.jpg");
+            height:600px;
+        }
+        .img2{
+            background-image: url("img2.jpg");
+            height:600px;
+        }
+        .img3{
+            background-image: url("img3.avif");
+            height:600px;
+        }
+        span{
+            background-color: blue;
+            width:30%;
+            padding:20px;
+            position:absolute;
+            top:40%;
+            left:35%;
+            color:white;
+            font-weight: 400;
+            text-align: center;
+            font-size: 30px;
+        }
+        .border1{
+            position:relative;
+            top:70%;
+            width:100%;
+            padding:50px;
+            background-color: rgb(18, 10, 1);
+            z-index: 1;
+        }
+        h3{
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-size:15px;
+            line-height: 25px;
+            color:white;
+        }
+    </style>
+</head>
+<body>
+    <div class="img1">
+        <span>Prallax Scroll</span>
+    </div>
+    <div class="border1">
+        <h3>Parallax scrolling is a web site trend where the background content is moved at a different speed than the foreground content while scrolling. Nascetur per nec posuere turpis, lectus nec libero turpis nunc at, sed posuere mollis ullamcorper libero ante lectus, blandit pellentesque a, magna turpis est sapien duis blandit dignissim. Viverra interdum mi magna mi, morbi sociis. Condimentum dui ipsum consequat morbi, curabitur aliquam pede, nullam vitae eu placerat eget et vehicula. Varius quisque non molestie dolor, nunc nisl dapibus vestibulum at, sodales tincidunt mauris ullamcorper, dapibus pulvinar, in in neque risus odio. Accumsan fringilla vulputate at quibusdam sociis eleifend, aenean maecenas vulputate, non id vehicula lorem mattis, ratione interdum sociis ornare. Suscipit proin magna cras vel, non sit platea sit, maecenas ante augue etiam maecenas, porta porttitor placerat leo.</h3>
+
+    </div>
+    <div class="img2">
+        <span>Prallax 2nd Page</span>
+    </div >
+
+    <div class="border1">
+        <h3> site trend where the background content is moved at a different speed than the foreground content while scrolling. Nascetur per nec posuere turpis, lectus nec libero turpis nunc at, sed posuere mollis ullamcorper libero ante lectus, blandit pellentesque a, magna turpis est sapien duis blandit dignissim. Viverra interdum mi magna mi, morbi sociis. Condimentum dui ipsum consequat morbi, curabitur aliquam pede, nullam vitae eu placerat eget et vehicula. Varius quisque non molestie dolor, nunc nisl dapibus vestibulum at, sodales tincidunt mauris ullamcorper, dapibus pulvinar, in in neque risus odio. Accumsan fringilla vulputate at quibusdam sociis eleifend, aenean maecenas vulputate, non id vehicula lorem mattis, ratione interdum sociis ornare. Suscipit proin magna cras vel, non sit platea sit, maecenas ante augue etiam maecenas, porta porttitor placerat leo.</h3>
+    </div>
+     
+    <div class="img3">
+        <span>Ravi Teja</span>
+    </div >
+    
+    <div class="img1">
+            <span>Prallax End</span>
+    </div>
+</body>
+</html>

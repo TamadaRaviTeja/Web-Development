@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Circular Menu Bar</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body{
+            background-image:url("back1.jpg");
+        }
+        .container{
+            width:300px;
+            height:300px;
+            position: absolute;
+            left:50%;
+            top:50%;
+            transform: translate(-50%,-50%);
+            border-radius: 50%;
+        }
+        .main{
+            width:55px;
+            height:55px;
+            background-color: white;
+            position: absolute;
+            left:50%;
+            top:50%;
+            transform: translate(-50%,-50%);
+            border-radius: 50%;
+        }
+        .menu{
+            position: absolute;
+            left:50%;
+            top:50%;
+            transform: translate(-50%,-50%);
+            border-radius: 50%;
+            font-size: 25px;
+            cursor: pointer;
+        }
+        .round1,.round2,.round3,.round4,.round5,.round6,.round7,.round8{
+            width:65px;
+            height:65px;
+            background-color: rgb(61, 60, 60);
+            position: absolute;
+            border-radius: 50%;
+            display:none;
+            cursor: pointer;
+            box-shadow:3px 3px 3px white;
+            
+         }
+        .round1:hover,.round2:hover,.round3:hover,.round4:hover,.round5:hover,.round6:hover,.round7:hover,.round8:hover{
+            width:80px;
+            height:80px;
+            position:relative;
+            align-items: center;
+
+            }
+        
+        .round1{
+            top:50%;
+            left:6%;
+            transform: translate(-50%,-50%);
+        }
+        .round2{
+            top:6%;
+            left:50%;
+            transform: translate(-50%,-50%);
+
+        }
+        .round3{
+            top:50%;
+            left:94%;
+            transform: translate(-50%,-50%);
+        }
+        .round4{
+            top:94%;
+            left:50%;
+            transform: translate(-50%,-50%);
+        }
+        .round5{
+            top:21%;
+            left:17%;
+            transform: translate(-50%,-50%);
+        }
+        .round6{
+            top:21%;
+            left:83%;
+            transform: translate(-50%,-50%);
+        }
+        .round7{
+            top:83%;
+            left:21%;
+            transform: translate(-50%,-50%);
+        }
+        .round8{
+            top:84%;
+            left:78%;
+            transform: translate(-50%,-50%);
+        }
+        .round1:hover{
+            background: rgb(0, 145, 255);
+
+        }
+        .round2:hover{
+            background: rgb(0, 145, 255);
+
+        }
+        .round3:hover{
+            background: rgb(255, 0, 0);
+
+        }
+        .round4:hover{
+            background: rgb(255, 255, 255);
+
+        }
+        .round5:hover{
+            background: rgb(0, 208, 255);
+
+        }
+        .round6:hover{
+            background: rgb(255, 0, 0);
+
+        }
+        .round7:hover{
+            background: rgb(255, 136, 0);
+
+        }
+        .round8:hover{
+            background: rgb(0, 94, 255);
+
+        }
+        .fa {
+            padding: 20px;
+            font-size: 40px;
+            width: 50px;
+            align-items: center;
+            text-decoration: none;
+            margin: 5px 2px;
+            position: absolute;
+            left:-5%;
+            top:-12%;
+            border-radius: 50%;
+            
+        }
+        .fa:hover{
+            position: absolute;
+            left:1%;
+            top:-1%;
+        }
+        
+
+        .fa-instagram{
+            color:white;
+
+        }
+        .fa-facebook{
+            color:white;
+
+        }
+        .fa-linkedin{
+            color:white;
+
+        }
+        .fa-google{
+            color:rgb(255, 255, 255);
+
+        }
+        .fa-google:hover{
+            color:rgb(255, 204, 0);
+
+        }
+        .fa-twitter{
+            color:white;
+
+        }
+        .fa-youtube{
+            color:white;
+
+        }
+        .fa-skype{
+            color:white;
+
+        }
+        .fa-pinterest{
+            color:white;
+        }
+       
+        
+        .menu1{
+            color:rgb(0, 0, 0);
+            font-size: 50px;
+            font-weight: 900;
+            position:absolute;
+            left:50%;
+            top:50%;
+            transform: translate(-50%,-50%);
+            cursor: pointer;
+        
+        }
+        h1{
+            font-size: 40px;
+            color:white;
+            width:400px;
+            height:50px;
+            box-shadow: 3px 3px 3px white;
+            position: absolute;
+            left:50%;
+            transform: translate(-50%);
+            text-align: center;
+            
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Circular Menu Bar</h1>
+<div class="container">
+    <div class="main">
+        <span class="menu" onclick="openbar()" id="menu">&#9776;</span>
+
+    </div>
+    
+    <div class="round1" id="r1">
+        <a href="#" class="fa fa-facebook"></a>  
+    </div>
+    <div class="round2" id="r2">
+        <a href="#" class="fa fa-twitter"></a>  
+
+    </div>
+    <div class="round3" id="r3">
+        <a href="#" class="fa fa-pinterest"></a>  
+
+    </div>
+    <div class="round4" id="r4">
+        <a href="#" class="fa fa-google"></a>  
+
+    </div>
+    <div class="round5" id="r5">
+        <a href="#" class="fa fa-skype"></a>  
+
+    </div>
+    <div class="round6" id="r6">
+        <a href="#" class="fa fa-youtube"></a>  
+
+    </div>
+    <div class="round7" id="r7">
+        <a href="#" class="fa fa-instagram"></a>  
+
+    </div>
+    <div class="round8" id="r8">
+        <a href="#" class="fa fa-linkedin"></a>  
+
+    </div>
+</div>
+
+<span class="menu1" onclick="closebar()" id="close">&times;</span>
+
+
+<script>
+    var x=document.getElementById("close");
+    var y=document.getElementById("menu");
+    x.style.display="none";
+    function openbar(){
+        document.getElementById("r1").style.display="block";
+        document.getElementById("r2").style.display="block";
+        document.getElementById("r3").style.display="block";
+        document.getElementById("r4").style.display="block";
+        document.getElementById("r5").style.display="block";
+        document.getElementById("r6").style.display="block";
+        document.getElementById("r7").style.display="block";
+        document.getElementById("r8").style.display="block";
+        x.style.display="block";
+        y.style.display="none"
+
+    }
+    function closebar(){
+        
+        document.getElementById("r1").style.display="none";
+        document.getElementById("r2").style.display="none";
+        document.getElementById("r3").style.display="none";
+        document.getElementById("r4").style.display="none";
+        document.getElementById("r5").style.display="none";
+        document.getElementById("r6").style.display="none";
+        document.getElementById("r7").style.display="none";
+        document.getElementById("r8").style.display="none";
+        x.style.display="none";
+        y.style.display="block"
+
+
+    }
+
+</script>
+</body>
+</html>

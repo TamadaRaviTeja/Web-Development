@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        body{
+            margin:0;
+            align-items: center;
+            background-color: black;
+        }
+        .box1{
+            position:relative;
+            top: 20px;
+            left:500px;
+            width:280px;
+            height:550px;
+            background-color: rgb(33, 27, 27);
+            border-radius:35px;
+            border:7px rgb(1, 5, 10) solid;
+            box-shadow: 1px 1px 20px white;
+        }
+        .box2{
+            width:280px;
+            height:350px;
+            position:absolute;
+            top:130px;
+            border-radius: 30px;
+        }
+
+        input[type='button']{
+            width:60px;
+            height:60px;
+            border-radius:50%;
+            border:none;
+            margin: 3px;
+            font-size: larger;
+            font-weight: 500;
+            color:azure;
+            background-color: rgb(161, 161, 202);
+            font-size:25px;
+        }
+        input[type='button']:hover{
+            background-color: rgb(33, 33, 179);
+        }
+        .zero{
+            width:130px;
+            border-radius: 40px;
+        }
+        input[type='button']:focus{
+            background-color: rgb(33, 179, 69);
+        }
+        #color1{
+            background-color: rgb(255, 145, 0);
+        }
+        #color1:active{
+            background-color: rgb(0, 10, 150);
+        }
+        #color{
+            background-color: rgb(64, 0, 255);
+            width:150px;
+            height:35px;
+            border-radius: 10px;
+            position: relative;
+            top:20px;
+            left:50px;
+    }
+    h1{
+        color:white;
+        position: absolute;
+        font-size: 100px;
+        left:100px;
+        font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+    h2{
+        color:white;
+        position: absolute;
+        top:300px;
+        left:830px;
+        font-size: 80px;
+        font-weight: 900;
+        font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+     
+    #calc{
+        width:275px;
+        height:100px;
+        position:absolute;
+        top:-90px;
+        border: none;
+        outline:none;
+        font-size: 30px;
+        border-radius: 10px;
+    }
+    </style>
+</head>
+<body>
+
+<h1>Simple</h1>
+    <div class= "box1">  
+        <div class="box2">
+        <form name = "form1">  
+          <input id = "calc" type ="text" name = "answer"> <br> <br>  
+          <input type = "button" value = "1" onclick = "form1.answer.value += '1' ">  
+          <input type = "button" value = "2" onclick = "form1.answer.value += '2' ">  
+          <input type = "button" value = "3" onclick = "form1.answer.value += '3' ">  
+           <input type = "button" value = "+" id="color1" onclick = "form1.answer.value += '+' ">  
+          <br> <br>  
+          <input type = "button" value = "4" onclick = "form1.answer.value += '4' ">  
+          <input type = "button" value = "5" onclick = "form1.answer.value += '5' ">  
+          <input type = "button" value = "6" onclick = "form1.answer.value += '6' ">  
+          <input type = "button" value = "-"  id="color1" onclick = "form1.answer.value += '-' ">  
+          <br> <br>  
+          <input type = "button" value = "7" onclick = "form1.answer.value += '7' ">  
+          <input type = "button" value = "8" onclick = "form1.answer.value += '8' ">  
+          <input type = "button" value = "9" onclick = "form1.answer.value += '9' ">  
+          <input type = "button" value = "*" id="color1" onclick = "form1.answer.value += '*' ">  
+          <br> <br>  
+            <input type = "button" value = "/" onclick = "form1.answer.value += '/' ">  
+          <input type = "button" value = "0" onclick = "form1.answer.value += '0' ">  
+            <input type = "button" value = "." onclick = "form1.answer.value += '.' ">  
+          <input type = "button" value = "=" id="color1"  onclick = "form1.answer.value = eval(form1.answer.value) ">  
+          <br>   
+          <input type = "button" value = "Clear All" id="color" onclick = "form1.answer.value = ' ' " id= "clear" >  
+          <br>   
+            
+        </form>  
+        </div>  
+    </div>
+    <h2>Calculator</h2>
+
+</body>
+</html>

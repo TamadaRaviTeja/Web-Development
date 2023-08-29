@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GetLocation</title>
+    <style>
+        body{
+            background-color: black;
+        }
+        button{
+            width:200px;
+            height:50px;
+            background-color: rgb(0, 8, 255);
+            border:none;
+            outline:none;
+            border-radius: 15px;
+            font-size: 20px;
+            color:white;
+            box-shadow: 3px 3px 3px white;
+            position: absolute;
+            left:50%;
+            top:50%;
+            transform: translate(-50%,-50%);
+            cursor: pointer;
+        }
+        p{
+            color:white;
+            font-size: 20px;
+            position: absolute;
+            left:50%;
+            top:30%;
+            letter-spacing: 5px;
+            transform: translate(-50%,-50%);
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;        
+        }
+        h1{
+            font-size: 50px;
+            color:white;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+          position: absolute;
+          left:50%;
+            transform: translate(-50%);
+        }
+        span{
+            color:red;
+        }
+    </style>
+
+</head>
+<body>
+    <h1>Get Current Location</h1>
+    <button onclick="GetLocation()">Get Your Location</button>
+    <p id="demo"></p>
+    <script>
+        let x=document.getElementById("demo");
+        function GetLocation(){
+            if(navigator.geolocation){
+                navigator.geolocation.getCurrentPosition(showposition);
+            }
+            else{
+                x.innerHTML="Your Browser doesn't support GEOLOCATION";
+            }
+        }
+            function showposition(position){  
+                x.innerHTML="Latitude:"+'<span>'+ position.coords.latitude+'</span>'
+                            +"<br>" +
+                            "Longitude:" + '<span>'+position.coords.longitude+'</span>';  
+     }  
+        
+       
+    </script>
+</body>
+</html>

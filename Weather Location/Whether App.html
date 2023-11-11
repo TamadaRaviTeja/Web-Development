@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body{
+            padding:0;
+            margin:0;
+        }
+        * {
+            box-sizing: border-box;
+            }
+        .symbols{
+            width:7%;
+            height:100vh;
+            display: flex;
+            background-color: rgba(0, 0, 0, 0.3);
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+    }
+        .symbols img{
+            width:50px;
+            height:50px;
+            
+        }
+        .sun,.cloudy,.cloudy1,.rainy-day,.rainy{
+            position: relative;
+            width: 100%;
+            height:50px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+            .sun:hover,.cloudy:hover,.cloudy1:hover,.rainy-day:hover,.rainy:hover{
+            width:100%;
+            height:100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.6);
+            transition: width 0.2s;
+            transition-timing-function: linear;
+                
+        }
+        .sun:hover .s1{
+            color: white;
+        }
+        .cloudy:hover .s1{
+            color: white;
+
+        }
+        .cloudy1:hover .s1{
+            color: white;
+
+        }
+        .rainy-day:hover .s1{
+            color: white;
+
+        }
+        .rainy:hover .s1{
+            color: white;
+
+        }
+
+        
+        .symbols p{
+            position: absolute;
+            left:130%;
+        }
+        .box{
+            width:70%;
+            height:80vh;
+            background-color: rgba(0, 0, 0, 0.2);
+            box-shadow: 3px 3px 20px rgb(119, 119, 119);
+            border-radius: 20px;
+            position: absolute;
+            transform: translate(-50%,-50%);
+            top:50%;
+            left:50%;
+        }
+        .fa{
+            font-size: 25px;
+            color:rgb(255, 255, 255);
+        }
+        .search{
+            border-radius:50% ;
+            background-color: rgba(0, 0, 0,0.2);
+            width:50px;
+            height:50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            position: absolute;
+            left:80%;
+            top:10%;
+            transform: translate(-50%,-50%);
+            color:white;
+            box-shadow: 3px 3px 3px white;
+        }
+        input[type='text']{
+            width:50%;
+            height:40px;
+            border-radius:20px ;
+            outline:none;
+            border:none;
+            font-size: 18px;
+            text-align:center;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            position: absolute;
+            left:50%;   
+            top:10%;
+            transform: translate(-50%,-50%);
+            background-color: rgba(0, 0, 0,0.2);
+            box-shadow: 3px 3px 15px white;
+            color:white;
+            
+        }::placeholder{
+            color:rgb(193, 193, 193);
+        }
+        .sun1{
+            width:100px;
+            height:100px;
+        }
+        .sun2{
+        position: absolute;
+            left:50%;
+            top:35%;
+            transform:translate(-50%,-50%);
+        }
+        .degree{
+            font-size: 40px;
+            font-weight: 700;
+            color:white;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .box1{
+            width:150px;
+            height:100px;
+            position: absolute;
+            left:50%;
+            top:60%;
+            transform: translate(-50%,-50%);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            
+        }
+        .city-name{
+            font-size: 30px;
+            
+        }
+
+       .symbols span{
+        margin-left:50px;
+       }
+       video{
+        z-index:-1;
+        position:absolute;
+        margin:0;
+        top:0;
+       }
+       .box4{
+            width:7%;
+            height:100vh;
+            display: flex;
+            background-color: rgba(0, 0, 0, 0.3);
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            position: absolute;
+            top:0;
+            left:93%;
+       }
+       .c1{
+        color:rgb(255, 255, 255);
+        font-size: 25px;
+        width:50px;
+        height:50px;
+        border-radius: 50%;
+        background-color: rgba(0, 0, 0,0.2);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        }
+        .c1:hover{
+         background-color: rgba(0, 0, 0, 0.6);
+         cursor: pointer;
+
+        }
+        .humidity{
+            position:absolute;
+            left:20%;
+            top:80%;
+            transform: translate(-50%,-50%);
+        }
+        .humidity img{
+            width:50px;
+            height:50px;
+        }
+        .humidity span{
+            font-size:30px;
+            color:white;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        .humidity span:nth-child(4){
+            font-size: 15px;
+        }
+        .wind-speed{
+            position:absolute;
+            left:80%;
+            top:80%;
+            transform: translate(-50%,-50%);
+        }
+        .wind-speed img{
+            width:50px;
+            height:50px;
+        }
+        .wind-speed span{
+            font-size:25px;
+            color:white;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        .wind-speed span:nth-child(4){
+            font-size: 15px;
+        }
+        .city-name{
+            color:rgb(251, 255, 0);
+            font-weight: 600;
+        }
+        .invalid{
+            font-size: 20px;
+            color:white;
+            position: absolute;
+            top:80%;
+            left:50%;
+            transform: translate(-50%,-50%);
+            display: none;
+        }
+        .s1{
+            width:100%;
+            height:20px;
+            align-items: center;
+            text-align: center;
+            color:rgb(71, 71, 71);
+            
+        }
+        .video2{
+            display: none;
+        }
+        @media only screen and (max-width: 600px) {
+            
+        .box{
+            width:90%;
+            height:60vh;
+        }
+        .symbols{
+            display: flex;
+            flex-direction: row;
+            width:100%;
+            height:10vh;
+            position: absolute;
+            top:89%
+        }
+        .box4{
+            display: flex;
+            flex-direction: row;
+            width:100%;
+            height:10vh;
+            position: absolute;
+            left:0;
+        }
+        .video2{
+            display: block;
+            position: fixed;
+            width:390px;
+            height:860px;
+        }
+        .wind-speed span:nth-child(4){
+            font-size: 13px;
+        }
+        .humidity{
+            top:85%;
+        }
+        .wind-speed{
+            left:80%;
+            top:85%;
+
+        }
+        .search{
+            left:90%;
+        }
+        input[type='text']{
+            width:60%;
+        }
+    }
+        
+    </style>
+</head>
+<body>
+    <video autoplay muted loop id="myVideo" width='100%' height="710px" class="video1">
+        <source src="back.mp4" type="video/mp4">
+      
+      </video>  
+      <video autoplay muted loop id="myVideo"  class="video2">
+        <source src="back1.mp4" type="video/mp4">
+      
+      </video> 
+      
+      <div class="container">
+        <span></span>
+    </div>
+    <div class="symbols">
+        <div class="sun"><img src="sun.png">
+            <div class="s1">Hot</div>
+        </div>
+        <div class="cloudy"><img src="cloudy.jpg">
+            <div class="s1">Cloudy</div>
+        </div>
+        <div class="cloudy1"><img src="cloudy1.jpg">
+            <div class="s1">Drizzle</div>
+        </div>
+        <div class="rainy-day"><img src="rainy-day.png">
+            <div class="s1">Mist</div>
+        </div>
+        <div class="rainy"><img src="rainy.png">
+            <div class="s1">Rain</div>
+        </div>
+     
+
+    </div>
+    <div class="box">
+        <div class="search"><i class="fa fa-search" ></i></div>
+        <input type="text" id="appear" class="text" placeholder="Enter your City">
+        <div class="sun2"><img class="sun1" src="sun.png"></div>
+        <div class="box1">
+            <span class="degree">0°c</span><br>
+            <span class="city-name">Unknown</span>
+        </div>
+        <div class="humidity"><img src="humidity.png">
+            <span class="humidity1">0%</span><br>
+            <span>Humidity</span>
+
+        </div>
+        <div class="wind-speed"><img src="wind.png">
+            <span class="speed">0Km/h</span><br>
+            <span>Wind Speed</span>
+        </div>
+
+        <div class="invalid">
+            <p>Invalid City Name</p>
+        </div>
+
+    </div>
+    <div class="box4">
+        <div class="c1"><span>W</span></div>
+        <div class="c1"><span>E</span></div>
+        <div class="c1"><span>A</span></div>
+        <div class="c1"><span>T</span></div>
+        <div class="c1"><span>H</span></div>
+        <div class="c1"><span>E</span></div>
+        <div class="c1"><span>R</span></div>
+        <div class="c1"><span>A</span></div>
+        <div class="c1"><span>P</span></div>
+        <div class="c1"><span>P</span></div>
+
+    </div>
+    
+    <script>
+       const apikey="5507e88e4660b5239c71d9cb7508e9c0" ;
+
+       const apiurl="https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
+       var searchbox=document.querySelector(".text");
+       var searchbutton=document.querySelector(".fa-search");
+       var weatherIcon=document.querySelector(".sun1");
+
+       async function checkweather(city){
+        const response =await fetch(apiurl+city+`&appid=${apikey}`);
+        if(response.status== 404){
+            documet.querySelector('.invalid').style.display='block';
+        }
+        else{
+        var data =await response.json();
+        console.log(data);
+
+        document.querySelector(".city-name").innerHTML=data.name;
+        document.querySelector(".degree").innerHTML=Math.round(data.main.temp)+"°c";
+        document.querySelector(".humidity1").innerHTML=data.main.humidity+"%";
+        document.querySelector(".speed").innerHTML=data.wind.speed+"Km/h";
+
+        if(data.weather[0].main=="Clouds"){
+            weatherIcon.src='cloudy.jpg';
+        }
+       else if(data.weather[0].main=="Clear"){
+            weatherIcon.src='sun.png';
+        }
+       else if(data.weather[0].main=="Rain"){
+            weatherIcon.src='rainy.png';
+        }
+        else if(data.weather[0].main=="Drizzle"){
+            weatherIcon.src='coludy1.png';
+        }
+        else if(data.weather[0].main=="Mist"){
+            weatherIcon.src='rainy-day.png';
+        }
+    }
+    }
+       searchbutton.addEventListener('click',()=>{
+        checkweather(searchbox.value);
+
+       });
+    </script>
+</body>
+</html>

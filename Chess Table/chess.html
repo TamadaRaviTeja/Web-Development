@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chess Game</title>
+    <style>
+        body{
+            margin:auto;
+        }
+        td{
+            border:2px solid black;
+            width:90px;
+            height:60px;
+            position: relative;
+            left:200px;
+            top:100px;
+         }
+       .chess_table{
+            max-width:1170px;
+            height:800px;
+            background-image:url('chess.jpeg');
+            position:relative;
+            top:-20px;
+            position:relative;
+            left:50px;
+            border-radius:10px;
+        }
+        .light{
+            background-color: white;
+
+        }
+        .dark{
+            background-color: rgb(18, 2, 2);
+            
+        }
+       h1{
+        color:coral;
+        font-size: 50px;
+        font-family: 'Times New Roman', Times, serif;
+        font-weight: 400;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        position:relative;
+        top:-45px;
+        }
+        .box1{
+            width:100%;
+            height:100px;
+            background-color: rgba(240, 39, 39, 0.912);
+            position:relative;
+            top:-50px;
+            margin:auto;
+        }
+        .box2{
+            width:800px;
+            height:50px;
+            background-color:rgb(255, 255, 255);
+            position:relative;
+            left: 230px;
+            top:70px;
+            z-index:1;
+            text-align: center;
+            border: 1px black;
+            border: 10px solid transparent;
+            padding: 15px;
+            border-image: url(border.png) 10 stretch;
+     }
+        .shold{
+            font-size:50px;
+            color:black;
+            margin-left:18px;
+             }
+</style>
+</head>
+<body>
+    <div class="box1">
+        <div class="box2">
+            <h1>Chess Board</h1>
+        </div>
+    </div>
+
+<div class="chess_table">
+<table>
+    <tr class="tr1">
+        <td class="light"><span class="shold">&#9814;</td>
+        <td><span class="shold">&#9816;</td>
+        <td class="light"><span class="shold">&#9815;</td>
+        <td ><span class="shold">&#9813;</td>
+        <td class="light"><span class="shold">&#9812;</td>
+        <td ><span class="shold">&#9815;</td>
+        <td class="light"><span class="shold">&#9816;</td>
+        <td ><span class="shold">&#9814;</td>
+    </tr>
+    <tr>
+        <td ><span class="shold">&#9817;</span></td>
+        <td class="light"><span class="shold">&#9817;</td>
+        <td ><span class="shold">&#9817;</td>
+        <td class="light"><span class="shold">&#9817;</td>
+        <td ><span class="shold">&#9817;</td>
+        <td class="light"><span class="shold">&#9817;</td>
+        <td ><span class="shold">&#9817;</td>
+        <td class="light"><span class="shold">&#9817;</td>
+        
+        
+    </tr>
+    <tr>
+        <td class="light"></td>
+        <td >.</td>
+        <td class="light"></td>
+        <td>.</td>
+        <td class="light"></td>
+        <td >.</td>
+        <td class="light"></td>
+        <td >.</td>
+    </tr>
+    <tr>
+        <td >.</td>
+        <td class="light"></td>
+        <td >.</td>
+        <td class="light"></td>
+        <td >.</td>
+        <td class="light"></td>
+        <td >.</td>
+        <td class="light"></td>
+    </tr>
+    <tr>
+        <td class="light"></td>
+        <td >.</td>
+        <td class="light"></td>
+        <td >.</td>
+        <td class="light"></td>
+        <td >.</td>
+        <td class="light"></td>
+        <td >.</td>
+    </tr>
+    <tr>
+        <td >.</td>
+        <td class="light"></td>
+        <td >.</td>
+        <td class="light"></td>
+        <td >.</td>
+        <td class="light"></td>
+        <td >.</td>
+        <td class="light"></td>
+        
+    </tr>
+    <tr>
+        <td class="light"><span class="shold">&#9823;</td>
+        <td ><span class="shold">&#9823;</td>
+        <td class="light"><span class="shold">&#9823;</td>
+        <td ><span class="shold">&#9823;</td>
+        <td class="light"><span class="shold">&#9823;</td>
+        <td ><span class="shold">&#9823;</td>
+        <td class="light"><span class="shold">&#9823;</td>
+        <td ><span class="shold">&#9823;</td>
+    </tr>
+    <tr>
+        <td ><span class="shold">&#9820;</td>
+        <td class="light"><span class="shold">&#9822;</td>
+        <td ><span class="shold">&#9821;</td>
+        <td class="light"><span class="shold">&#9819;</td>
+        <td ><span class="shold">&#9818;</td>
+        <td class="light"><span class="shold">&#9821;</td>
+        <td ><span class="shold">&#9822;</td>
+        <td class="light"><span class="shold">&#9820;</td>
+    </tr>
+</table>
+</div>
+</body>
+</html>

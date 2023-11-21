@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Google Search</title>
+    <style>
+        body{
+            margin:0;
+            background-image: url('back.jpg');
+            background-repeat: no-repeat;
+            background-size: 1280px 620px;
+            }
+            #name{
+                position: absolute;
+                left:50%;
+                top:60%;
+                transform: translate(-50%,-50%);
+                width:600px;
+                height:45px;
+                border-radius: 30px;
+                border:none;
+                outline:none;
+                z-index:-2;
+
+            }
+            .contaienr{
+                width:550px;
+                height:80px;
+                position: absolute;
+                left:50%;
+                top:75%;
+                transform: translate(-50%,-50%);
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+                align-items: center;
+                z-index:-1;
+            }
+            .youtube,.amazon,.aha,.zee5,.add{
+                width:55px;
+                height:55px;
+                background-color: rgb(50, 50, 50);
+                border-radius: 50%;
+                cursor:pointer;
+            }
+           
+            .fa{
+                width:30px;
+                height:30px;
+                font-size: 25px;
+                position: absolute;
+                top:53%;
+                transform:translate(-50%,-50%) ;
+        }
+            .fa-youtube {
+                color: rgb(254, 254, 254);  
+                left:11%;
+                }
+
+            .fa-linkedin {
+                color: white;
+                left:31%;
+
+            }
+
+            .fa-amazon {
+                 color: white;
+                 left:50.5%;
+
+            }
+
+            .fa-instagram {
+                color: white;
+                left:70.5%;
+
+            }
+            .fa-plus{
+                color: white;
+                left:91%;
+            }
+            .fa-youtube:hover {
+                color:rgb(255, 71, 71);  
+                left:11%;
+                }
+
+            .fa-linkedin:hover {
+                color: rgb(17, 8, 255);
+                left:31%;
+
+            }
+
+            .fa-amazon:hover {
+                 color: rgb(255, 183, 1);
+                 left:50.5%;
+
+            }
+
+            .fa-instagram:hover {
+                color: rgb(255, 0, 81);
+                left:70.5%;
+
+            }
+            .fa-plus:hover{
+                color: rgb(13, 255, 0);
+                left:91%;
+            }
+            .fa-search{
+                color:rgb(115, 115, 115);
+                left:29%;
+                top:61%;
+                font-size:20px;
+            }
+            ::placeholder{
+               position: relative;
+               left:-17%;
+               top:6%;
+               font-size: 18px;
+            }
+            .box{
+                width:300px;
+                height:70px;
+                position: absolute;
+                left:50%;
+                top:40%;
+                transform: translate(-50%,-50%);
+            }
+            span{
+                font-size: 90px;
+                font-weight: 500;
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            }
+            .box span:nth-child(1){
+                color:rgb(72, 72, 244);
+            }
+            .box span:nth-child(2){
+                color:rgb(230, 88, 41);
+            }
+
+            .box span:nth-child(3){
+                color:rgba(255, 215, 13, 0.948);
+            }
+
+            .box span:nth-child(4){
+                color:rgb(72, 72, 244);
+            }
+            .box span:nth-child(5){
+                color:rgb(30, 167, 44);
+            }
+            .box span:nth-child(6){
+                color:rgb(230, 88, 41);
+            }
+            input[type="search"]{
+                text-align:center;
+                font-size: 18px;
+            }
+            .opentab{
+                width:100%;
+                height:100vh;
+                background-color: rgba(0, 0, 0,0.5);
+                color:white;
+                display: none;
+
+            }
+            .innertab{
+                width:550px;
+                height:280px;
+                background-color: rgb(41, 41, 41);
+                position: absolute;
+                top:60%;
+                left:50%;
+                transform:translate(-50%,-50%);
+                border-radius: 10px;
+                color:white;
+
+            }
+            #name1,#url{
+                width:450px;
+                height:28px;
+                border-radius: 5px;
+                outline:none;
+                background-color: rgb(29, 29, 29);
+                color:white;
+            }
+            #url{
+                position:relative;
+                top:50%;
+            }
+            #name1{
+                position:relative;
+                top:30%;
+            }
+            .cancel,.done{
+                width:80px;
+                height:30px;
+                background-color: rgb(23, 23, 23);
+                position: relative;
+                left:60%;
+                top:60%;
+                outline:none;
+                color:rgb(116, 116, 220);
+                border:1px solid rgb(27, 27, 27);
+                border-radius: 5px;
+                cursor: pointer;
+            }
+            .cancel:active,.done:active{
+                background-color: rgb(50, 50, 50);
+            }
+            .opentab label:nth-child(1){
+                position: relative;
+                top:20%;
+                
+            }
+            label{
+                position: relative;
+                top:40%;
+                font-size: 12px;
+                left:5%;
+            }
+            
+            h1{
+                font-size: 20px;
+                color:rgb(255, 255, 255);
+            }
+            .name1,.url{
+                border-bottom: 2px solid rgb(128, 128, 238);
+            
+            }
+            
+
+    </style>
+</head>
+<body>
+    <div class="box">
+        <span>G</span>
+        <span>o</span>
+        <span>o</span>
+        <span>g</span>
+        <span>l</span>
+        <span>e</span>
+    </div>
+    <form>
+        <input type="search" name="name" id="name" placeholder="Search Google or type URL" >
+        <i class="fa fa-search"></i>
+
+    </form>
+    <div class="contaienr">
+        <div class="youtube"><a href="https://www.youtube.com/" class="fa fa-youtube"></a></div>
+        <div class="amazon"><a href="https://www.amazon.in/" class="fa fa-amazon"></a></div>
+        <div class="aha"><a href="https://www.linkedin.com/feed/" class="fa fa-linkedin"></a></div>
+        <div class="zee5"><a href="https://www.instagram.com/" class="fa fa-instagram"></a></div>
+        <div class="add" ><i class="fa fa-plus" onclick="opentab1()"></i>
+        </div>
+    </div>
+    
+    <div class="opentab" id="opentab">
+        <div class="innertab">
+            <label>Name</label><input type="text" class="name1" id="name1"><br>
+            <label>URL</label><input type="url" class="url" id="url" onclick="urlclick()">
+            <input type="submit" value="Cancel" onclick="closetab()" class="cancel">
+            <input type="submit" value="Done" onclick="closetab()" class="done" >
+
+        </div>
+    </div>
+    <script>
+        var opentab=document.getElementById("opentab");
+        var name1=document.getElementsById("name1");
+         var url=document.getElementsById("url");
+
+        function opentab1(){
+            opentab.style.display="block";
+
+        }
+        function closetab(){
+            opentab.style.display="none";
+
+        }
+        
+    </script>
+</body>
+</html>

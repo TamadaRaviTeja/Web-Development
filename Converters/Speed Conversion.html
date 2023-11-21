@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speed Conversion</title>
+    <style>
+        body{
+           animation-name:colorchange;
+           animation-duration: 5s;
+           animation-iteration-count: infinite;
+            margin:0;
+            padding: 0;
+           
+        }
+        @keyframes colorchange {
+            0%{
+                background-color:rgb(77, 18, 18) ;
+            }
+
+            25%{
+                background-color:rgb(131, 20, 20) ;
+
+            }
+            50%{
+                background-color:rgb(216, 37, 37) ;
+
+            }
+            75%{
+                background-color:rgb(131, 20, 20) ;
+
+            }
+            100%{
+                background-color:rgb(77, 18, 18) ;
+
+            }
+        }
+        #demo{
+            color:white;
+        }
+        input[type="number"]{
+            border:none;
+            outline:none;
+            width:400px;
+            height:40px;
+            margin:30px;
+            border-radius: 5px;
+            font-size: 18px;
+            background-color: rgb(255, 0, 0);
+            box-shadow: 2px 2px 2px white;
+            color: rgb(253, 253, 253);
+            text-align: center;
+            
+            
+
+        }
+        ::placeholder{
+            text-align: center;
+            color:white;
+        }
+        .container{
+            width:500px;
+            height:500px;
+            position: absolute;
+            top:60%;
+            left:55%;
+            transform: translate(-50%,-50%);
+        }
+        .box{
+            width:150px;
+            height:400px;
+            position: absolute;
+            top:53%;
+            left:36%;
+            transform: translate(-50%,-50%);
+            display:flex;
+            flex-direction: column;
+            color:white;
+            font-size: 25px;
+            justify-content: space-around;
+        }
+        h1{
+            position: absolute;
+            color:white;
+            margin-left: 40%;
+        }
+    </style>
+</head>
+<body>
+    <h1>Speed Conversion</h1>
+    <div class="box">
+        <span>MPH:</span>
+        <span>KPH:</span>
+        <span>Knots:</span>   
+        <span>mach:</span>
+
+        
+
+    </div>
+<div class="container">
+    <form name="form1">
+        <input type="number" placeholder="Enter MPH"       name="mph"     oninput="mph_to_others(this.value)">
+        <input type="number" placeholder="Enter KPH"       name="kph"     oninput="kph_to_others(this.value)">
+        <input type="number" placeholder="Enter Knots"    name="knots"    oninput="knots_to_others(this.value)">
+        <input type="number" placeholder="Enter Mach"    name="mach"      oninput="mach_to_others(this.value)">
+
+    </form>
+</div>
+    
+
+    <script>
+  
+        
+        let mph_total;
+        let kph_total;
+        let knots_total;
+        let mach_total;
+
+        
+        function mph_to_others(mph){
+            kph_total= mph*1.609344;
+            knots_total=mph/1.150779;
+            mach_total=mph/761.207
+
+            form1.kph.value=kph_total;
+            form1.knots.value=knots_total;
+            form1.mach.value=mach_total;
+        
+        }
+
+        function kph_to_others(kph){
+
+            mph_total= kph/1.609344;
+            knots_total=kph/1.852;
+            mach_total=kph/1225.044;
+
+            form1.mph.value=mph_total;
+            form1.knots.value=knots_total;
+            form1.mach.value=mach_total;
+
+            
+        }
+        function knots_to_others(knots){
+            
+            mph_total= knots*1.150779;
+            kph_total=knots*1.852;
+            mach_total=knots/661.4708;	
+
+            form1.kph.value=kph_total;
+            form1.mph.value=mph_total;
+            form1.mach.value=mach_total;
+            
+        }
+
+        function mach_to_others(mach){
+            
+            mph_total= mach*761.207;
+            kph_total=mach*1225.044;
+            knots_total=mach*661.4708;
+
+
+            form1.kph.value=kph_total;
+            form1.mph.value=mph_total;
+            form1.knots.value=knots_total;
+            
+        }
+    </script>
+</body>
+</html>s

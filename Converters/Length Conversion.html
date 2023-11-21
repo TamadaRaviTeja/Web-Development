@@ -1,0 +1,237 @@
+d<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speed Conversion</title>
+    <style>
+        body{
+           animation-name:colorchange;
+           animation-duration: 5s;
+           animation-iteration-count: infinite;
+            margin:0;
+            padding: 0;
+           
+        }
+        @keyframes colorchange {
+            0%{
+                background-color:rgb(24, 72, 17) ;
+            }
+
+            25%{
+                background-color:rgb(28, 105, 25) ;
+
+            }
+            50%{
+                background-color:rgb(51, 194, 70) ;
+
+            }
+            75%{
+                background-color:rgb(28, 105, 25) ;
+
+            }
+            100%{
+                background-color:rgb(24, 72, 17) ;
+
+            }
+        }
+        #demo{
+            color:white;
+        }
+        input[type="number"]{
+            border:none;
+            outline:none;
+            width:400px;
+            height:40px;
+            margin:30px;
+            border-radius: 5px;
+            font-size: 18px;
+            background-color: rgb(21, 71, 36);
+            box-shadow: 2px 2px 2px white;
+            color: rgb(253, 253, 253);
+            text-align: center;
+            
+            
+
+        }
+        ::placeholder{
+            text-align: center;
+            color:white;
+        }
+        .container{
+            width:1100px;
+            height:500px;
+            position: absolute;
+            top:60%;
+            left:50%;
+            transform: translate(-50%,-50%);
+            display: flex;
+            
+            align-items: center;
+
+            
+        }
+        .box{
+            width:1100px;
+            height:500px;
+            position: absolute;
+            top:59%;
+            left:50%;
+            transform: translate(-50%,-50%);
+            color:rgb(0, 0, 0);
+            font-size: 25px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            
+        }
+        h1{
+            position: absolute;
+            color:white;
+            margin-left: 40%;
+        }
+    </style>
+</head>
+<body>
+    <h1>Length Conversion</h1>
+    
+
+
+        
+
+<div class="container">
+    <form name="form1">
+        <input type="number" placeholder="Enter Feet"           name="feet"       oninput="feet_to_others(this.value)">
+        <input type="number" placeholder="Enter Meter"          name="meters"     oninput="meters_to_others(this.value)">
+        <input type="number" placeholder="Enter Inches"         name="inches"     oninput="inches_to_others(this.value)">
+        <input type="number" placeholder="Enter CM"             name="cm"         oninput="cm_to_others(this.value)">
+        <input type="number" placeholder="Enter Yards"          name="yards"      oninput="yards_to_others(this.value)">
+        <input type="number" placeholder="Enter KM"             name="km"         oninput="km_to_others(this.value)">
+        <input type="number" placeholder="Enter Miles"          name="miles"      oninput="miles_to_others(this.value)">
+
+    </form>
+</div>
+    
+
+    <script>
+  
+        
+        let feet_total;
+        let meters_total;
+        let inches_total;
+        let cm_total;
+        let yards_total;
+        let km_total;
+        let miles_total;
+
+        
+        function feet_to_others(feet){
+            meters_total=feet/3.2808;
+            inches_total=feet*12;
+            cm_total=feet/0.032808;
+            yards_total=feet*0.33333;
+            km_total=feet/3280.8;
+            miles_total=feet*0.00018939;
+            form1.meters.value=meters_total;
+            form1.inches.value=inches_total;
+            form1.cm.value=cm_total;
+            form1.yards.value=yards_total;
+            form1.km.value=km_total;
+            form1.miles.value=miles_total;
+        
+        }
+
+        function inches_to_others(inches){
+            meters_total=inches/39.370;
+            feet_total=inches*0.083333;
+            cm_total=inches/0.39370;
+            yards_total=inches*0.027778;
+            km_total=inches/39370;
+            miles_total=inches*0.000015783;
+            form1.meters.value=meters_total;
+            form1.feet.value=feet_total;
+            form1.cm.value=cm_total;
+            form1.yards.value=yards_total;
+            form1.km.value=km_total;
+            form1.miles.value=miles_total;
+        
+        }
+        function meters_to_others(meters){
+            feet_total=meters*3.2808;
+            inches_total=meters*39.370;
+            cm_total=meters/0.01;
+            yards_total=meters*1.0936
+            km_total=meters/1000;
+            miles_total=meters*0.00062137;
+            form1.feet.value=feet_total;
+            form1.inches.value=inches_total;
+            form1.cm.value=cm_total;
+            form1.yards.value=yards_total;
+            form1.km.value=km_total;
+            form1.miles.value=miles_total;
+        
+        }
+
+        function cm_to_others(cm){
+            feet_total=cm*0.032808;
+            inches_total=cm*0.39370;
+            meters_total=cm/100;
+            yards_total=cm*0.010936;
+            km_total=cm/100000;
+            miles_total=cm*0.0000062137;
+            form1.feet.value=feet_total;
+            form1.inches.value=inches_total;
+            form1.meters.value=meters_total;
+            form1.yards.value=yards_total;
+            form1.km.value=km_total;
+            form1.miles.value=miles_total;
+        
+        }
+        function yards_to_others(yards){
+            feet_total=yards*3;
+            inches_total=yards*36;
+            meters_total=yards/1.0936;
+            cm_total=yards/0.010936;
+            km_total=yards/1093.6;
+            miles_total=yards*0.00056818;
+            form1.feet.value=feet_total;
+            form1.inches.value=inches_total;
+            form1.meters.value=meters_total;
+            form1.cm.value=cm_total;
+            form1.km.value=km_total;
+            form1.miles.value=miles_total;
+        
+        }
+        function km_to_others(km){
+            feet_total=km*3280.8;
+            inches_total=km*39370;
+            meters_total=km*1000;
+            cm_total=km*100000;
+            yards_total=km*1093.6;
+            miles_total=km*0.62137;
+            form1.feet.value=feet_total;
+            form1.inches.value=inches_total;
+            form1.meters.value=meters_total;
+            form1.cm.value=cm_total;
+            form1.yards.value=yards_total;
+            form1.miles.value=miles_total;
+        
+        }
+        function miles_to_others(miles){
+            feet_total=miles*5280;
+            inches_total=miles*63360;
+            meters_total=miles/0.00062137;
+            cm_total=miles/0.0000062137;
+            km_total=miles/0.62137;
+            yards_total=miles*1760;
+            form1.feet.value=feet_total;
+            form1.inches.value=inches_total;
+            form1.meters.value=meters_total;
+            form1.cm.value=cm_total;
+            form1.km.value=km_total;
+            form1.yards.value=yards_total;
+        
+        }
+    </script>
+</body>
+</html>s

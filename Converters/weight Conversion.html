@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weight Conversion</title>
+    <style>
+        body{
+           animation-name:colorchange;
+           animation-duration: 5s;
+           animation-iteration-count: infinite;
+            margin:0;
+            padding: 0;
+           
+        }
+        @keyframes colorchange {
+            0%{
+                background-color:rgb(11, 11, 35) ;
+            }
+
+            25%{
+                background-color:rgb(21, 21, 82) ;
+
+            }
+            50%{
+                background-color:rgb(36, 36, 114) ;
+
+            }
+            75%{
+                background-color:rgb(21, 21, 82) ;
+
+            }
+            100%{
+                background-color:rgb(11, 11, 35) ;
+
+            }
+        }
+        #demo{
+            color:white;
+        }
+        input[type="number"]{
+            border:none;
+            outline:none;
+            width:400px;
+            height:40px;
+            margin:30px;
+            border-radius: 5px;
+            font-size: 18px;
+            background-color: rgb(21, 22, 45);
+            box-shadow: 2px 2px 2px white;
+            color: rgb(255, 255, 255);
+            text-align: center;
+            
+            
+
+        }
+        ::placeholder{
+            text-align: center;
+        }
+        .container{
+            width:500px;
+            height:500px;
+            position: absolute;
+            top:60%;
+            left:55%;
+            transform: translate(-50%,-50%);
+        }
+        .box{
+            width:150px;
+            height:500px;
+            position: absolute;
+            top:60%;
+            left:30%;
+            transform: translate(-50%,-50%);
+            display:flex;
+            flex-direction: column;
+            color:white;
+            font-size: 25px;
+            justify-content: space-around;
+        }
+        h1{
+            position: absolute;
+            color:white;
+            margin-left: 40%;
+        }
+    </style>
+</head>
+<body>
+    <h1>Weight Conversion</h1>
+    <div class="box">
+        <span>Grams:</span>
+        <span>KiloGrams:</span>
+        <span>Pounds:</span>
+        <span>Ounces:</span>
+        <span>Stones:</span>
+
+    </div>
+<div class="container">
+    <form name="form1">
+        <input type="number" placeholder="Enter Grams"     name="gram"     id="gram"        oninput="gram_to_others(this.value)">
+        <input type="number" placeholder="Enter kiloGrams" name="kilogram" id="kilogram"    oninput="kilogram_to_others(this.value)">
+        <input type="number" placeholder="Enter Pounds"    name="pounds"   id="pounds"      oninput="pounds_to_others(this.value)">
+        <input type="number" placeholder="Enter ounces"    name="ounces"   id="ounces"      oninput="ounces_to_others(this.value)">
+        <input type="number" placeholder="Enter stones"    name="stones"   id="stones"      oninput="stones_to_others(this.value)">
+    </form>
+</div>
+    
+
+    <p id="demo"></p>
+    <script>
+        var gram = document.getElementById("gram");
+        var kilogram = document.getElementById("kilogram");
+        var pounds = document.getElementById("pounds");
+        var ounces = document.getElementById("ounces");
+        var stones = document.getElementById("stones");
+        
+        let gram_total;
+        let kilogram_total;
+        let ounces_total;
+        let pounds_total;
+        let stones_total;
+
+    function gram_to_others(gram){
+        kilogram_total=gram/1000;
+        ounces_total=gram*0.035274;
+        pounds_total=gram*0.0022046;
+        stones_total=gram*0.00015747;
+
+        
+            form1.kilogram.value=kilogram_total;
+            form1.ounces.value=ounces_total;
+            form1.pounds.value=pounds_total;
+            form1.stones.value=stones_total;
+        }
+
+        function kilogram_to_others(kilogram){
+        gram_total=kilogram*1000;
+        ounces_total=kilogram*35.274;
+        pounds_total=kilogram*2.2046;
+        stones_total=kilogram*0.1574;
+
+        
+            form1.gram.value=gram_total;
+            form1.ounces.value=ounces_total;
+            form1.pounds.value=pounds_total;
+            form1.stones.value=stones_total;
+        }
+        function pounds_to_others(pounds){
+        gram_total=pounds/0.0022046;
+        ounces_total=pounds*16;
+        kilogram_total=pounds/2.2046;
+        stones_total=pounds*0.071429;
+
+        
+            form1.gram.value=gram_total;
+            form1.ounces.value=ounces_total;
+            form1.kilogram.value=kilogram_total;
+            form1.stones.value=stones_total;
+        }
+        function ounces_to_others(ounces){
+        gram_total=ounces/0.035274;
+        pounds_total=ounces*0.0625; 
+        kilogram_total=ounces/35.274;
+        stones_total=ounces*0.0044643
+
+        
+            form1.gram.value=gram_total;
+            form1.pounds.value=pounds_total;
+            form1.kilogram.value=kilogram_total;
+            form1.stones.value=stones_total;
+        }
+        function stones_to_others(stones){
+        gram_total=stones/0.00015747;
+        ounces_total=stones*224;
+        kilogram_total=stones/0.15747;
+        pounds_total=stones*14
+
+        
+            form1.gram.value=gram_total;
+            form1.ounces.value=ounces_total;
+            form1.kilogram.value=kilogram_total;
+            form1.pounds.value=pounds_total;
+        }
+
+
+    </script>
+</body>
+</html>

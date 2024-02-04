@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+    <style>
+        body{
+            margin:0;
+            padding:0;
+            background-color: black;
+        }
+        .container{
+            width:50%;
+            height:70vh;
+            background-color: rgba(0, 0, 0, 0.5);
+            box-shadow: 1px 1px 10px white;
+            align-items: center;
+            position: absolute;
+            top:50%;
+            left:50%;
+            transform: translate(-50%,-50%);
+            overflow: hidden;
+        }
+        h2 {
+            padding: 1rem;
+            text-align: center;
+            margin: 0;
+            color:white;
+            font-size: 25px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        ul li {
+         margin: 30px;
+         color:rgb(254, 191, 72);
+         position: relative;
+         left:10%;  
+         top:40%;
+         font-size: 20px;
+        }
+        ul li label {
+             cursor: pointer;
+        }
+        input[type="submit"] {
+            background-color: #8e44ad;
+            color: #fff;
+            border: none;
+            width: 100%;
+            height:10vh;
+            cursor: pointer;
+            font-size: 1.1rem;
+            position: absolute;
+            top:93%;
+            left:50%;
+            transform: translate(-50%,-50%);
+}
+input[type="submit"]:hover {
+  background-color: #bb1bff;
+}
+
+input[type="submit"]:focus {
+  outline: none;
+  background-color: #5e3370;
+}
+h2{
+    text-align: center;
+}
+#reload{
+    width:150px;
+    height:40px;
+    border-radius: 10px;
+    background-color: #bb1bff;
+    border:none;
+    outline:none;
+    font-size: 18px;
+    color:white;
+    position: absolute;
+    left:50%;
+    top:80%;
+    transform: translate(-50%,-50%);
+    cursor:pointer;
+}
+    </style>
+</head>
+<body>
+    <h2>Quiz Application</h2>
+    <div class="container" id="quiz">
+        <h2 id="question">Question text</h2>
+        <ul>
+            <li>
+                <input type="radio"  name="answer" id="a" class="answer">
+                <label for="a" id="a_text">Question</label>
+            </li>
+            <li>
+                <input type="radio"  name="answer" id="b" class="answer">
+                <label for="b" id="b_text">Question</label>
+            </li>
+            <li>
+                <input type="radio"  name="answer" id="c" class="answer">
+                <label for="c" id="c_text">Question</label>
+            </li>
+            <li>
+                <input type="radio"  name="answer" id="d" class="answer">
+                <label for="d" id="d_text">Question</label>
+            </li>
+        </ul>
+        <input type="submit" id='submit' value="Submit">
+    </div>
+    <script>
+        const quizData = [
+    {
+        question: "Which language runs in a web browser?",
+        a: "Java",
+        b: "C",
+        c: "Python",
+        d: "JavaScript",
+        correct: "d",
+    },
+    {
+        question: "What does CSS stand for?",
+        a: "Central Style Sheets",
+        b: "Cascading Style Sheets",
+        c: "Cascading Simple Sheets",
+        d: "Cars SUVs Sailboats",
+        correct: "b",
+    },
+    {
+        question: "What does HTML stand for?",
+        a: "Hypertext Markup Language",
+        b: "Hypertext Markdown Language",
+        c: "Hyperloop Machine Language",
+        d: "Helicopters Terminals Motorboats Lamborginis",
+        correct: "a",
+    },
+    {
+        question: "What year was JavaScript launched?",
+        a: "1996",
+        b: "1995",
+        c: "1994",
+        d: "none of the above",
+        correct: "b",
+    },
+];
+
+
+const quiz = document.getElementById('quiz')
+const answerEls = document.querySelectorAll('.answer')
+const questionEl = document.getElementById('question')
+const a_text = document.getElementById('a_text')
+const b_text = document.getElementById('b_text')
+const c_text = document.getElementById('c_text')
+const d_text = document.getElementById('d_text')
+const submitBtn = document.getElementById('submit')
+
+    let currentQuiz = 0
+    let score = 0
+
+   
+      
+    loadQuiz()  
+    function loadQuiz() {
+         deselectAnswers()
+         const currentQuizData = quizData[currentQuiz]
+         questionEl.innerText = currentQuizData.question
+         a_text.innerText = currentQuizData.a
+         b_text.innerText = currentQuizData.b
+        c_text.innerText = currentQuizData.c
+        d_text.innerText = currentQuizData.d
+}
+
+
+function deselectAnswers() {
+    answerEls.forEach(answerEl => answerEl.checked = false)
+}
+
+function getSelected() {
+    let answer
+
+    answerEls.forEach(answerEl => {
+        if(answerEl.checked) {
+            answer = answerEl.id
+        }
+    })
+
+    return answer
+}
+
+submitBtn.addEventListener('click', () => {
+    const answer = getSelected()
+    
+    if(answer) {
+        if(answer === quizData[currentQuiz].correct) {
+            score++
+        }
+
+        currentQuiz++
+
+        if(currentQuiz < quizData.length) {
+            loadQuiz()
+        } else {
+            quiz.innerHTML = `
+                <h2>You answered ${score}/${quizData.length} questions correctly</h2>
+
+                <button id="reload" onclick="location.reload()">Reload</button>
+            `
+        }
+    }
+})
+    </script>
+</body>
+</html>

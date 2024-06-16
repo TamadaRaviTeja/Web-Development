@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Change</title>
+    <style>
+        body{
+            background-color: black;
+            position: absolute;
+            top:50%;
+            left:50%;
+            transform: translate(-50%,-50%);
+        }
+        button{
+            background-color: blue;
+            color:white;
+            height: 50px;
+            width: 200px;
+            border:none;
+            outline: none;
+            border-radius: 35px;
+            cursor: pointer;
+            font-size: 18px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-weight: 600;
+            box-shadow: 2px 2px white;
+
+        }
+    </style>
+</head>
+<body>
+    <button id="bt1" onclick="alert1()">Alert</button> 
+    <script>
+        let button1=document.querySelector('button');
+        function alert1(){
+          const time =new   Date();
+          let seconds=time.getSeconds();
+          let minutes=time.getMinutes();
+          let hours=time.getHours();
+          alert("The current time is - " +hours+":"+minutes+":"+seconds);
+
+        }
+    </script>
+</body>
+</html>

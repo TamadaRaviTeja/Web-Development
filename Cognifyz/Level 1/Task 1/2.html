@@ -1,0 +1,198 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">    <style>
+        body{
+            background-color: rgb(11, 8, 22);
+            margin:0;
+            padding:0;
+        }
+        .container{
+            width:350px;
+            height:400px;
+            background-color: rgb(11, 8, 22);
+            position: absolute;
+            top:50%;
+            left:50%;
+            transform: translate(-50%,-50%);
+            box-shadow: 3px 3px 30px rgb(128, 128, 128);
+            overflow: hidden;
+            border-radius: 10px;
+        }
+        .container span {
+            position: absolute;
+            height: 50%;
+            width: 50%;
+
+        }
+        .container span:nth-child(1) {
+background: #ff6505;
+top: 0;
+left: -49%;
+animation: 5s span1 infinite linear;
+animation-delay: 1s;
+border-radius: 10px;
+
+}
+.container span:nth-child(2) {
+background: #00a800;
+bottom: 0;
+right: -48%;
+animation: 5s span2 infinite linear;
+animation-delay: 1s;
+border-radius: 10px;
+
+
+}
+        
+        @keyframes span1 {
+            0% {
+                 top: -49%;
+                left: -49%;
+                }
+                25% {
+  top: -49%;
+  left: 99%;
+}
+50% {
+  top: 99%;
+  left: 99%;
+}
+75% {
+  top: 99%;
+  left: -49%;
+}
+100% {
+  top: -49%;
+  left: -49%;
+}
+}
+@keyframes span2 {
+0% {
+  bottom: -49%;
+  right: -49%;
+}
+25% {
+  bottom: -49%;
+  right: 99%;
+}
+50% {
+  bottom: 99%;
+  right: 98%;
+}
+75% {
+  bottom: 99%;
+  right: -49%;
+}
+100% {
+  bottom: -49%;
+  right: -49%;
+}
+}
+
+input[type="text"],input[type="password"]{
+    width:250px;
+    height:40px;
+    border-radius: 10px;
+    background-color:rgb(21, 21, 42);
+    outline:none;
+    border:2px solid rgb(80, 80, 160);
+    font-size: 16px;
+    position: absolute;
+    left:50%;
+    transform: translate(-50%,-50%);
+    color:white;
+    text-align: center;
+}
+::placeholder{
+    position: absolute;
+    left:35%;
+}
+input[type="text"]{
+    top:35%;
+}
+input[type="password"]{
+    top:55%;
+}
+
+input[type="submit"]{
+    width:250px;
+    height:50px;
+    border-radius: 30px;
+    background-color: rgb(25, 30, 66);
+    font-size:18px;
+    color:white;
+    position: absolute;
+    left:50%;
+    top:80%;
+    transform: translate(-50%,-50%);
+    cursor: pointer;
+    outline:none;
+    border:none;
+    box-shadow:2px 2px 2px white;
+
+}
+input[type="submit"]:hover{
+    background-color: rgb(11, 32, 188);
+
+}
+input[type="submit"]:active{
+    background-color: rgb(11, 32, 188);
+
+}
+h1{
+font-size: 30px;
+color:white;
+text-align: center;
+margin-top: 40px;
+font-weight: 800;   
+font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif  ;
+}
+.fa{
+    color:white;
+    z-index:99;
+    font-size: 30px;
+    
+}
+.fa-user{
+    position: absolute;
+    top:31%;
+    left:15%
+}
+.fa-lock{
+    position: absolute;
+    top:51%;
+    left:15%;
+}
+
+
+
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <span></span>
+    <span></span>
+    <h1>Login</h1>
+
+    <form method="" action="">
+
+        <input type="text" onclick="upper1()" name="name" placeholder="Username"><br>
+
+        <input type="submit" value="Login">
+    </form>
+    <i class="fa fa-user"></i>
+
+
+</div>
+
+<script>
+   
+</script>
+</body>
+</html>

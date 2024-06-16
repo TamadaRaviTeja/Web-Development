@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pop-Up using Js</title>
+    <style>
+        body{
+            margin:0;
+            padding:0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: rgb(124, 124, 205);
+        }
+        .container{
+            width:100%;
+            height:100vh;
+            display:flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .btn{
+            width:140px;
+            height:50px;
+            background-color: white;
+            border-radius:10px; 
+            border:none;
+            font-size: medium;
+            cursor:pointer;
+            border:none;
+            outline:none;
+        }
+        .popup{
+            position: absolute;
+            top:0%;
+            left:50%;
+            transform:translate(-50%,-50%)scale(0.1);
+            width:350px;
+            height:300px;
+            background-color: aliceblue;
+            text-align:center;
+            border-radius: 7px;
+            visibility:hidden;
+            transition:transform 0.4s,0.5s;
+        }
+        .openpopup1{
+            visibility:visible;
+            top:50%;    
+            transform:translate(-50%,-50%)scale(1);
+
+        }
+        .popup img{
+            width:100px;
+            height:100px;
+            margin-top:-50px;
+        }
+        .btn1{
+            width:200px;
+            height:50px;
+            background-color: rgb(48, 238, 67);
+            border-radius:10px; 
+            border:none;
+            font-size: medium;
+            cursor:pointer;
+            color:white;
+            margin-top:50px;
+         }
+         .btn1:hover{
+            background-color:rgb(47, 48, 47,0.8);
+         }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button type="submit" class="btn" onclick="openpopup()">Submit</button>
+        <div class="popup" id="popup">
+            <img src="img.png">
+            <h2>Thank You</h2>
+            <h4>Your From has submitted successfully</h4>
+            <button type="button" class="btn1" onclick="closepopup()">Close</button>
+        </div>
+    </div>
+    
+    <script>
+    let popup = document.getElementById("popup");
+    function openpopup(){
+        popup.classList.add("openpopup1");
+    }
+    function closepopup(){
+        popup.classList.remove("openpopup1");
+    }   
+    
+    </script>
+</body>
+</html>

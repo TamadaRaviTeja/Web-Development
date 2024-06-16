@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tab Headers</title>
+    <style>
+        body{
+            background-color:black;
+            margin:0;
+            padding: 0;
+            
+        }
+       button{
+            background-color: rgb(80, 80, 80);
+            border:none;
+            outline:none;
+            font-size: 20px;
+        }
+        .tab{
+            width:300px;
+            height:50px;
+            text-align: center;
+            align-items: center;
+            display: flex;
+            justify-content: center;
+            cursor:pointer;
+            color:white;
+     }
+        .tab:hover{
+            background-color: black;
+        }
+        .btncontainer{
+            width:300px;
+            height:100vh;
+            background-color: rgb(80, 80, 80);
+            position: absolute;
+            top:0;
+        }
+        .container{
+           width:76%;
+           height:100vh;
+           background-color:bisque ;
+           margin-left:300px;
+           position: absolute;
+           top:0;
+        }
+        .col1{
+            display: none;
+            position:absolute ;
+            left:50%;
+            top:50%;
+            transform:translate(-50%,-50%);
+        }
+    </style>
+</head>
+<body>
+    
+<div class="btncontainer">
+    <button class="tab" id="defaultopen" onclick="openDetails('col1','color')">Name</button>
+    <button class="tab" onclick="openDetails('col2')">Roll No</button>
+    <button class="tab" onclick="openDetails('col3')">Regd No</button>
+    <button class="tab" onclick="openDetails('col4')">Semester</button>
+    <button class="tab" onclick="openDetails('col5')">University</button>
+    <button class="tab" onclick="openDetails('col6')">Phone No</button>
+</div>
+
+    <div class="container">
+        <div  id="col1" class="col1">
+            <h1>Ravi Teja</h1>
+        </div>
+        <div  id="col2" class="col1">
+            <h1>21Cse087</h1>
+        </div>
+        <div  id="col3" class="col1">
+            <h1>21UG010721</h1>
+        </div>
+        <div  id="col4" class="col1">
+            <h1>05</h1>
+        </div>
+        <div  id="col5" class="col1">
+            <h1>Giet University</h1>
+        </div>
+        <div  id="col6" class="col1">
+            <h1>8249XXXXXX</h1>
+        </div>
+    </div>
+    
+    <script>
+        function openDetails(Details){
+        var i;
+        var De=document.getElementsByClassName("col1");
+        for(i=0;i<De.length;i++){
+            De[i].style.display="none";
+        }
+        document.getElementById(Details).style.display="block";
+
+        }
+        document.getElementById("defaultopen").click();
+
+    </script>
+</body>
+</html>

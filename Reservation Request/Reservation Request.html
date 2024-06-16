@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservation Request</title>
+    <style>
+        body{
+            background-color: black;
+            position: absolute;
+            top:50%;
+            left:50%;
+            transform: translate(-50%,-50%);
+
+        }
+        h1{
+            color: white;
+        }
+        .main{
+            width:800px;
+            height: 100vh;
+            border:2px solid white;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            
+
+        }
+        .div1,.div2 ,.div3{
+            width:750px;
+            height: 25vh;
+            border: 1px solid white;            
+
+        }
+
+        .div1{
+            
+        }
+        label{
+            color: white;
+        }
+        input[type="text"],input[type='number'],input[type='email']{
+            width:300px;
+            height:30px;
+            outline:none;
+            border:none;
+            background-color: transparent;
+            box-shadow: 1px 1px 8px rgb(255, 255, 255);
+            color:white;
+        }
+        input[type="date"]{
+            width:200px;
+            height:20px;
+        }
+    .div3{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        justify-content: center;
+    }        
+           
+        
+    </style>
+</head>
+<body>
+    <div class="main">
+        <h1>Reservation Request</h1>
+        <div class="div1">
+
+            <label for="Date">Arrival Date</label><input type="date"><br>
+            <label for="">Nights</label><input type="text"><br>
+            <label for="Adults">Adults</label>
+            <select name="age" id="">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+
+            </select><br>
+            <label for="">Childern</label>
+            <select name="childern" id="">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+
+            </select>
+
+        </div>
+        <div class="div2">
+            <label for="">Room Tyoe:</label>
+            <input type="radio" name="preference"><label for="">Standard</label>
+            <input type="radio" name="preference"><label for="">Business</label>
+            <input type="radio" name="preference"><label for="">Suite</label> <br>
+            <label for="">Bed Type</label>
+            <input type="radio" name="preference1"><label for="">king</label>
+            <input type="radio" name="preference1"><label for="">Double Double</label>
+            <br>
+
+            <label for="">Smoking</label> <input type="checkbox">
+
+        </div>
+        <div class="div3">
+            <label for="">Name</label><input type="text" placeholder="Enter Name"><br>
+            <label for="">Email</label><input type="email" placeholder="Enter Email"><br>
+            <label for="">Phone</label><input type="Number" placeholder="Enter Mobile Numebr">
+        </div>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,90 @@
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <style>
+        body{
+            background-color: rgb(17, 17, 47);
+        }
+        input[type="text"]{
+            width:350px;
+            border-radius:10px;
+            height:40px;
+            background-color: rgb(23, 23, 67);
+            outline:none;
+            border:none;
+            box-shadow: 2px 2px 2px white;
+            color:white;
+            font-size:20px;
+            position: absolute;
+            top:10%;
+            left:50%;
+            transform:translate(-50%,-50%);
+        }
+        #test{
+            width:300px;
+            height:40px;
+            background-color: rgb(31, 13, 53);
+            border-radius:10px ;
+            display:flex;
+            flex-direction: column;
+            justify-content:center;
+            align-items: center;
+            font-size: 25px;
+            color:white;
+            box-shadow: 2px 2px 2px white;
+            
+        }
+        .main{
+            width:350px;
+            height:100%;
+            white-space: nowrap;
+            display:flex;
+            flex-direction:column;
+            justify-content: flex-end;
+            align-items: center;
+            position: absolute;
+            left:52%;
+            top:65%;
+            transform:translate(-50%,-50%);
+
+        }
+    </style>
+</head>
+<div  class="app" ng-app="myapp" ng-controller="myctrl" onclick="open1()" >
+    <input type="text" ng-model="test" placeholder="Search a  Name">
+    <div id="app1" onmousemove="open2()" class="main" >
+        <p ng-repeat="x in ln | filter:test" id="test">
+            {{x}}
+        </p>
+    </div>
+</div>
+    <script>
+        var app=angular.module("myapp",[]);
+        
+        app.controller("myctrl",function($scope){
+            $scope.ln=['Rohi','Ravi','Sri','Lallu','Sumit','Varshi','Krishna Rao','Sridevi','Nagesh','Raju','Shankar','srilaxmi','Rajesh'];
+        });
+    </script>
+    <script>
+        let app1=document.getElementById("app1");
+        app1.style.display="none";
+
+        function open1(){
+            app1.style.display="block";
+        }
+        function open2(){
+            app1.style.display="block";
+        }
+        function close1(){
+            app1.style.display="none";
+
+        }
+    </script>
+
+
+</body>
+</html>

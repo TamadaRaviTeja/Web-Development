@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Change Text using js</title>
+    <style>
+        body{
+            background-color: black;
+            margin:0;
+            padding:0;
+        }
+        #name{
+            color:white;
+            font-size:50px;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-weight: 600;
+            position:absolute;
+            left:50%;
+            transform: translate(-50%);
+            width:400px;
+            height:100px;
+            box-shadow: 3px 3px 3px white;
+            padding-left: 30px;
+
+        }
+        .container{
+            position: absolute;
+            left:50%;
+            top:50%;
+            transform: translate(-50%);
+            
+        }
+        button{
+            color:rgb(0, 0, 0);
+            width:100px;
+            height:40px;
+            border-radius: 5px;
+            border:none;
+            outline:none;
+            font-size: larger;
+            background-color: rgb(100, 100, 100);
+            box-shadow: 3px 3px 3px white;
+            margin:10px;
+            cursor: pointer;
+
+        }
+       .red:hover{
+            background-color: red;
+        }
+        .blue:hover{
+            background-color: rgb(65, 19, 247);
+        }
+        .green:hover{
+            background-color: rgb(45, 249, 83);
+        }
+        .yellow:hover{
+            background-color: rgb(221, 255, 0);
+        }
+    </style>
+</head>
+<body>
+    <p id="name">Ravi 19189 Teja</p>
+<div class="container">
+    <button onclick="red()" class="red">Red</button>
+    <button onclick="green()" class="green">Green</button>
+    <button onclick="blue()" class="blue">Blue</button>
+    <button onclick="yellow()" class="yellow">Yellow</button>
+</div>
+<script>
+    let x=document.getElementById("name");
+    function red(){
+        x.style.color="red";
+    }
+    function green(){
+        x.style.color="green";
+    }
+    function blue(){
+        x.style.color="blue";
+    }
+    function yellow(){
+        x.style.color="yellow";
+    }
+</script>
+</body>
+</html>
